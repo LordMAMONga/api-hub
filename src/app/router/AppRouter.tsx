@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
+import { Layout } from "../../core/components/Layout";
 
 const HomePage = () => (
   <div style={{ padding: "20px" }}>
@@ -28,9 +29,11 @@ const PokemonScreenPlaceholder = () => (
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
 
-      <Route path="/pokemon" element={<PokemonScreenPlaceholder />} />
+        <Route path="pokemon" element={<PokemonScreenPlaceholder />} />
+      </Route>
     </Routes>
   );
 };
