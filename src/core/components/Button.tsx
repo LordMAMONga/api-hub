@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, type FC, useState } from "react";
+import { type ButtonHTMLAttributes, type FC } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "danger";
