@@ -44,7 +44,7 @@ export const Layout: FC = () => {
         </div>
       </header>
 
-      <main style={{ flex: 1, padding: "30px", backgroundColor: "#f5f6fa" }}>
+      <main style={{ flex: 1, padding: "30px", backgroundColor: "#0f0f14" }}>
         <Outlet />
       </main>
     </div>
