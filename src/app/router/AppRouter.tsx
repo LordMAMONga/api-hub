@@ -6,6 +6,9 @@ import { PokemonDetailScreen } from "../../features/pokedex/ui/screens/PokemonDe
 import { AnimePage } from "../../features/jikan/ui/AnimePage";
 import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailScreen/AnimeDetailScreen";
 
+import { GamesPage } from "../../features/rawg/ui/screen/GamesPage";
+import { GameDetailScreen } from "../../features/rawg/ui/screen/GameDetailScreen";
+
 const HomePage = () => (
   <div style={{ padding: "20px" }}>
     <h1>API Hub </h1>
@@ -22,6 +25,9 @@ const HomePage = () => (
       </li>
       <li>
         <Link to="/crypto">4. Crypto Dashboard (Разработчик 3)</Link>
+      </li>
+      <li>
+        <Link to="/games">3. Video Games Database (RAWG)</Link>
       </li>
     </ul>
   </div>
@@ -40,7 +46,10 @@ export const AppRouter = () => {
           <Route index element={<AnimePage />} />
           <Route path=":id" element={<AnimeDetailScreen />} />
         </Route>
-
+        <Route path="games">
+          <Route index element={<GamesPage />} />
+          <Route path=":id" element={<GameDetailScreen />} />
+        </Route>
       </Route>
     </Routes>
   );
