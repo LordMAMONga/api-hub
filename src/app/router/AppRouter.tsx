@@ -1,5 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout } from "../../core/components/Layout";
+import { PokemonListScreen } from "../../features/pokedex/ui/screens/PokemonListScreen";
+import { PokemonDetailScreen } from "../../features/pokedex/ui/screens/PokemonDetailScreen";
 
 import { AnimePage } from "../../features/jikan/ui/AnimePage";
 import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailScreen/AnimeDetailScreen";
@@ -25,25 +27,20 @@ const HomePage = () => (
   </div>
 );
 
-const PokemonScreenPlaceholder = () => (
-  <div style={{ padding: "20px" }}>
-    <h2>Тут будет крутой экран с Покемонами</h2>
-    <Link to="/">⬅ Назад в меню</Link>
-  </div>
-);
-
 export const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
 
-        <Route path="pokemon" element={<PokemonScreenPlaceholder />} />
+        <Route path="pokemon" element={<PokemonListScreen />} />
+        <Route path="pokemon/:name" element={<PokemonDetailScreen />} />
 
         <Route path="anime">
           <Route index element={<AnimePage />} />
           <Route path=":id" element={<AnimeDetailScreen />} />
         </Route>
+
       </Route>
     </Routes>
   );

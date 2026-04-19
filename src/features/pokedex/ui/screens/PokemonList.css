@@ -1,0 +1,66 @@
+.pokedex-container {
+  padding: 20px;
+  color: #f8fafc;
+  min-height: 100vh;
+}
+
+.pokedex-container::before {
+  content: "";
+  position: fixed;
+  top: -25%;
+  left: -25%;
+  width: 150vw;
+  height: 150vh;
+
+  background-color: #09090b;
+
+  background-image:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(99, 102, 241, 0.25),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(236, 72, 153, 0.25),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(139, 92, 246, 0.25),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 20% 90%,
+      rgba(45, 212, 191, 0.25),
+      transparent 40%
+    );
+
+  filter: blur(80px);
+
+  z-index: 0;
+  pointer-events: none;
+
+  animation: auroraFlow 20s ease-in-out infinite alternate;
+}
+
+.pokedex-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pokedex-container h1,
+.pokedex-container h2 {
+  color: #ffffff;
+}
+@keyframes auroraFlow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(5deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(-5deg) scale(0.9);
+  }
+}
