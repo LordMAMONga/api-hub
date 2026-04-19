@@ -14,6 +14,7 @@
   margin-bottom: 10px;
   background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -57,7 +58,7 @@
 .result-container {
   margin-top: 40px;
   width: 100%;
-  max-width: 300px; /* Делаем карточку чуть крупнее, чем в списке */
+  max-width: 300px;
   animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
