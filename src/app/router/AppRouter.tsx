@@ -9,6 +9,8 @@ import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailSc
 import { GamesPage } from "../../features/rawg/ui/screen/GamesPage";
 import { GameDetailScreen } from "../../features/rawg/ui/screen/GameDetailScreen";
 
+import { WallpapersPage } from "../../features/wallhaven/ui/screens/WallpapersPage";
+
 const HomePage = () => (
   <div style={{ padding: "20px" }}>
     <h1>API Hub </h1>
@@ -29,6 +31,9 @@ const HomePage = () => (
       <li>
         <Link to="/games">3. Video Games Database (RAWG)</Link>
       </li>
+      <li>
+        <Link to="/wallpaper">3. Wallpapers</Link>
+      </li>
     </ul>
   </div>
 );
@@ -46,9 +51,14 @@ export const AppRouter = () => {
           <Route index element={<AnimePage />} />
           <Route path=":id" element={<AnimeDetailScreen />} />
         </Route>
+
         <Route path="games">
           <Route index element={<GamesPage />} />
           <Route path=":id" element={<GameDetailScreen />} />
+        </Route>
+
+        <Route path="wallpaper">
+          <Route index element={<WallpapersPage />} />
         </Route>
       </Route>
     </Routes>
