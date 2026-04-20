@@ -1,21 +1,21 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout } from "../../core/components/Layout";
 
-// --- ИМПОРТЫ ЭКРАНОВ ИЗ ИЗОЛИРОВАННЫХ ФИЧ (FEATURES) ---
 
-// 1. Pokedex (Разработчик 1)
+
+
 import { PokemonListScreen } from "../../features/pokedex/ui/screens/PokemonListScreen";
 import { PokemonDetailScreen } from "../../features/pokedex/ui/screens/PokemonDetailScreen";
 
-// 2. Anime Database (Т)
+
 import { AnimePage } from "../../features/jikan/ui/AnimePage";
 import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailScreen/AnimeDetailScreen";
 
-// 3. anime cast — Используем ваши текущие файлы
+
 import { MaxDriverPage } from "../../features/football-standings/ui/screens/MaxDriverPage";
 import { DriverDetailScreen } from "../../features/football-standings/ui/screens/DriverDetailScreen";
 
-// --- ГЛАВНОЕ МЕНЮ (HUB) ---
+
 const HomePage = () => (
   <div style={{ padding: "40px", color: "white", background: "#111", minHeight: "100vh" }}>
     <h1 style={{ fontSize: "3rem", marginBottom: "10px" }}>API Hub 🌐</h1>
@@ -35,12 +35,12 @@ const HomePage = () => (
         </Link>
       </li>
       <li>
-        {/* ЗАМЕНЕНО: Теперь ведет на футбол */}
+        
         <Link to="/rick" style={{ color: "#00ff00", textDecoration: "none", fontWeight: "bold" }}>
           ⚽ 3. rick and morty (Адилет)
         </Link>
       </li>
-      {/* Ссылка на новый проект */}
+    
       <li>
         <Link to="/spacex" style={{ color: "#005288", textDecoration: "none" }}>
           🚀 4. SpaceX Missions (Новый проект)
@@ -51,29 +51,22 @@ const HomePage = () => (
 );
 
 
-// --- ГЛОБАЛЬНЫЙ МАРШРУТИЗАТОР ---
 export const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-
-        {/* --- РОУТЫ POKEMON --- */}
         <Route path="pokemon">
           <Route index element={<PokemonListScreen />} />
           <Route path=":name" element={<PokemonDetailScreen />} />
         </Route>
-
-        {/* --- РОУТЫ ANIME --- */}
         <Route path="anime">
           <Route index element={<AnimePage />} />
           <Route path=":id" element={<AnimeDetailScreen />} />
         </Route>
 
-        {/* --- РОУТЫ FOOTBALL (ЗАМЕНЕНО ИЗ F1) --- */}
-        <Route path="football">
+        <Route path="rick">
           <Route index element={<MaxDriverPage />} />
-          {/* Используем :id для перехода к деталям команды */}
           <Route path=":id" element={<DriverDetailScreen />} />
         </Route>
 
