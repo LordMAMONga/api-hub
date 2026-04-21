@@ -19,6 +19,8 @@ import { DriverDetailScreen } from "../../features/football-standings/ui/screens
 
 import { QuotesPage } from "../../features/quotes/ui/screens/QuotesPage";
 
+import { CsmPage } from "../../features/chainsawman/ui/screens/CsmPage";
+
 import "./HomePage.css";
 
 const projects = [
@@ -85,6 +87,14 @@ const projects = [
     path: "/quote",
     icon: "🧪",
     color: "#22c55e",
+  },
+  {
+    id: 9,
+    title: "Cats Universe",
+    author: "Разработчик 3",
+    path: "/chainsawman",
+    icon: "🐱",
+    color: "#f59e0b",
   },
 ];
 
@@ -159,6 +169,10 @@ export const AppRouter = () => {
 
         <Route path="quote">
           <Route index element={<QuotesPage />} />
+        </Route>
+
+        <Route path="chainsawman">
+          <Route index element={<CsmPage />} />
         </Route>
       </Route>
     </Routes>
