@@ -10,6 +10,8 @@ import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailSc
 import { GamesPage } from "../../features/rawg/ui/screen/GamesPage";
 import { GameDetailScreen } from "../../features/rawg/ui/screen/GameDetailScreen";
 
+import { WallpapersPage } from "../../features/wallhaven/ui/screens/WallpapersPage";
+
 import { CatsPage } from "../../features/cats/ui/screens/CatsPage";
 
 const HomePage = () => (
@@ -24,13 +26,16 @@ const HomePage = () => (
         <Link to="/anime">2. Anime Database (Т)</Link>
       </li>
       <li>
-        <Link to="/weather">3. Weather Tracker (Разработчик 2)</Link>
+        <Link to="/cats">3. Cats </Link>
       </li>
       <li>
         <Link to="/crypto">4. Crypto Dashboard (Разработчик 3)</Link>
       </li>
       <li>
         <Link to="/games">5. Video Games Database (RAWG)</Link>
+      </li>
+      <li>
+        <Link to="/wallpaper">3. Wallpapers</Link>
       </li>
     </ul>
   </div>
@@ -55,6 +60,10 @@ export const AppRouter = () => {
         <Route path="games">
           <Route index element={<GamesPage />} />
           <Route path=":id" element={<GameDetailScreen />} />
+        </Route>
+
+        <Route path="wallpaper">
+          <Route index element={<WallpapersPage />} />
         </Route>
       </Route>
     </Routes>
