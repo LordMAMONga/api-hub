@@ -5,6 +5,9 @@
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: crosshair;
+  display: flex;
+  flex-direction: column;
+  height: 380px;
 }
 
 .csm-card:hover {
@@ -13,11 +16,15 @@
   box-shadow: 0 15px 30px rgba(220, 38, 38, 0.15);
 }
 
-.csm-image-container {
+.csm-image-container img {
   width: 100%;
-  height: 350px;
-  position: relative;
-  background: #111;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(80%) contrast(120%);
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
 }
 
 .csm-image-container img {
@@ -31,6 +38,7 @@
 
 .csm-card:hover .csm-image-container img {
   filter: grayscale(0%) contrast(110%);
+  transform: scale(1.05);
 }
 
 .csm-image-overlay {
