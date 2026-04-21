@@ -10,16 +10,72 @@ import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailSc
 import { GamesPage } from "../../features/rawg/ui/screen/GamesPage";
 import { GameDetailScreen } from "../../features/rawg/ui/screen/GameDetailScreen";
 
-import "./HomePage.css"; 
+import { CatsPage } from "../../features/cats/ui/screens/CatsPage";
 
+import { WallpapersPage } from "../../features/wallhaven/ui/screens/WallpapersPage";
+
+import { MaxDriverPage } from "../../features/football-standings/ui/screens/MaxDriverPage";
+import { DriverDetailScreen } from "../../features/football-standings/ui/screens/DriverDetailScreen";
+
+import "./HomePage.css";
 
 const projects = [
-  { id: 1, title: "Pokedex", author: "Разработчик 1", path: "/pokemon", icon: "🐾", color: "#ef4444" },
-  { id: 2, title: "Anime Database", author: "Т", path: "/anime", icon: "⛩️", color: "#8b5cf6" },
-  { id: 3, title: "Weather Tracker", author: "Разработчик 2", path: "/weather", icon: "🌤️", color: "#0ea5e9" },
-  { id: 4, title: "Crypto Dashboard", author: "Разработчик 3", path: "/crypto", icon: "💎", color: "#f59e0b" },
-  { id: 5, title: "Video Games Database", author: "RAWG", path: "/games", icon: "🎮", color: "#10b981" },
-
+  {
+    id: 1,
+    title: "Pokedex",
+    author: "Разработчик 1",
+    path: "/pokemon",
+    icon: "🐾",
+    color: "#ef4444",
+  },
+  {
+    id: 2,
+    title: "Anime Database",
+    author: "Т",
+    path: "/anime",
+    icon: "⛩️",
+    color: "#8b5cf6",
+  },
+  {
+    id: 3,
+    title: "One Piece Wiki",
+    author: "Разработчик 2",
+    path: "/onepiece",
+    icon: "🏴‍☠️",
+    color: "#0ea5e9",
+  },
+  {
+    id: 4,
+    title: "Video Games Database",
+    author: "RAWG",
+    path: "/games",
+    icon: "🎮",
+    color: "#10b981",
+  },
+  {
+    id: 5,
+    title: "Desktop Customizer",
+    author: "Wallhaven",
+    path: "/wallpaper",
+    icon: "🎨",
+    color: "#ec4899",
+  },
+  {
+    id: 6,
+    title: "Cats Universe",
+    author: "Разработчик 3",
+    path: "/cats",
+    icon: "🐱",
+    color: "#f59e0b",
+  },
+  {
+    id: 7,
+    title: "Driver Standings",
+    author: "Т",
+    path: "/rick",
+    icon: "🏎️",
+    color: "#3b82f6",
+  },
 ];
 
 const HomePage = () => (
@@ -37,7 +93,13 @@ const HomePage = () => (
           className="project-card"
           style={{ "--hover-color": project.color } as React.CSSProperties}
         >
-          <div className="project-icon-wrapper" style={{ backgroundColor: `${project.color}20`, color: project.color }}>
+          <div
+            className="project-icon-wrapper"
+            style={{
+              backgroundColor: `${project.color}20`,
+              color: project.color,
+            }}
+          >
             {project.icon}
           </div>
           <div className="project-info">
@@ -66,7 +128,7 @@ export const AppRouter = () => {
           <Route index element={<AnimePage />} />
           <Route path=":id" element={<AnimeDetailScreen />} />
         </Route>
-        
+
         <Route path="onepiece" element={<OnePiecePage />} />
 
         <Route path="cats" element={<CatsPage />} />
@@ -79,6 +141,7 @@ export const AppRouter = () => {
         <Route path="wallpaper">
           <Route index element={<WallpapersPage />} />
         </Route>
+
         <Route path="rick">
           <Route index element={<MaxDriverPage />} />
           <Route path=":id" element={<DriverDetailScreen />} />
