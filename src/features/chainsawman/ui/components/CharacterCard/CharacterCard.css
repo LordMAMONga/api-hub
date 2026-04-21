@@ -1,0 +1,115 @@
+.csm-card {
+  background: #0a0a0a;
+  border: 2px solid #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: crosshair;
+}
+
+.csm-card:hover {
+  border-color: #dc2626;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(220, 38, 38, 0.15);
+}
+
+.csm-image-container {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  background: #111;
+}
+
+.csm-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(80%) contrast(120%);
+  transition: filter 0.3s ease;
+}
+
+.csm-card:hover .csm-image-container img {
+  filter: grayscale(0%) contrast(110%);
+}
+
+.csm-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, #0a0a0a 10%, transparent);
+}
+
+.csm-info {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.csm-name {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 15px 0;
+  text-shadow: 2px 2px 0px #dc2626;
+}
+
+.csm-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.csm-tag {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 6px 12px;
+  letter-spacing: 1px;
+}
+
+.csm-tag.species {
+  background: #dc2626;
+  color: #fff;
+  align-self: flex-start;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+.csm-tag.affiliation {
+  color: #a3a3a3;
+  border-left: 3px solid #dc2626;
+  padding-left: 10px;
+}
+
+.csm-scratch {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(220, 38, 38, 0.05) 10px,
+    rgba(220, 38, 38, 0.05) 20px
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.csm-card:hover .csm-scratch {
+  opacity: 1;
+}
+
+.csm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+  align-items: stretch;
+}
