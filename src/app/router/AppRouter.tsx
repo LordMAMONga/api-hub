@@ -21,115 +21,169 @@ import { QuotesPage } from "../../features/quotes/ui/screens/QuotesPage";
 
 import { CsmPage } from "../../features/chainsawman/ui/screens/CsmPage";
 
+import { JjkPage } from "../../features/jujutsukaisen/ui/screens/JjkPage";
+
+import "./HomePage.css";
+
+import {
+  Smartphone, // Для Покедекса
+  Library, // Для базы Аниме
+  Anchor, // Для Ван Пис
+  Gamepad2, // Для Игр
+  Monitor, // Для Обоев
+  Cat, // Для Котов
+  FlaskConical, // Для Рика и Морти
+  MessageSquareQuote, // Для Цитат
+  Axe, // Для Бензопилы
+  Zap, // Для Магички
+} from "lucide-react";
+
 import "./HomePage.css";
 
 const projects = [
   {
     id: 1,
     title: "Pokedex",
-    author: "Разработчик 1",
+    author: "Dermisell",
     path: "/pokemon",
-    icon: "🐾",
+    icon: <Smartphone size={28} strokeWidth={1.5} />,
     color: "#ef4444",
+    docUrl: "https://pokeapi.co/docs/v2",
   },
   {
     id: 2,
     title: "Anime Database",
-    author: "Т",
+    author: "MAMON",
     path: "/anime",
-    icon: "⛩️",
+    icon: <Library size={28} strokeWidth={1.5} />,
     color: "#8b5cf6",
+    docUrl: "https://docs.api.jikan.moe/",
   },
   {
     id: 3,
     title: "One Piece Wiki",
-    author: "Разработчик 2",
+    author: "mexqut",
     path: "/onepiece",
-    icon: "🏴‍☠️",
+    icon: <Anchor size={28} strokeWidth={1.5} />,
     color: "#0ea5e9",
+    docUrl: "https://api-onepiece.com/en/documentation",
   },
   {
     id: 4,
-    title: "Video Games Database",
-    author: "RAWG",
+    title: "Video Games",
+    author: "MAMON",
     path: "/games",
-    icon: "🎮",
+    icon: <Gamepad2 size={28} strokeWidth={1.5} />,
     color: "#10b981",
+    docUrl: "https://api.rawg.io/docs/",
   },
   {
     id: 5,
     title: "Desktop Customizer",
-    author: "Wallhaven",
+    author: "MAMON",
     path: "/wallpaper",
-    icon: "🎨",
+    icon: <Monitor size={28} strokeWidth={1.5} />,
     color: "#ec4899",
+    docUrl: "https://wallhaven.cc/help/api",
   },
   {
     id: 6,
     title: "Cats Universe",
-    author: "Разработчик 3",
+    author: "Emir",
     path: "/cats",
-    icon: "🐱",
+    icon: <Cat size={28} strokeWidth={1.5} />,
     color: "#f59e0b",
+    docUrl: "https://thecatapi.com/",
   },
   {
     id: 7,
     title: "Rick and Morty",
-    author: "Т",
+    author: "Adik.aep",
     path: "/rick",
-    icon: "🧪",
+    icon: <FlaskConical size={28} strokeWidth={1.5} />,
     color: "#22c55e",
+    docUrl: "https://rickandmortyapi.com/",
   },
   {
     id: 8,
-    title: "Anime Quote",
-    author: "Т",
+    title: "Anime Quotes",
+    author: "MAMON",
     path: "/quote",
-    icon: "🧪",
-    color: "#22c55e",
+    icon: <MessageSquareQuote size={28} strokeWidth={1.5} />,
+    color: "#a855f7",
+    docUrl: "https://animechan.io/docs",
   },
   {
     id: 9,
-    title: "Cats Universe",
-    author: "Разработчик 3",
+    title: "Chainsaw Man",
+    author: "MAMON",
     path: "/chainsawman",
-    icon: "🐱",
-    color: "#f59e0b",
+    icon: <Axe size={28} strokeWidth={1.5} />,
+    color: "#dc2626",
+    docUrl: "https://docs.api.jikan.moe/",
+  },
+  {
+    id: 10,
+    title: "Jujutsu Kaisen",
+    author: "MAMON",
+    path: "/jujutsukaisen",
+    icon: <Zap size={28} strokeWidth={1.5} />,
+    color: "#3b82f6",
+    docUrl: "https://docs.api.jikan.moe/",
   },
 ];
 
 const HomePage = () => (
   <div className="hub-dashboard">
     <div className="dashboard-header">
-      <h1 className="dashboard-title">Добро пожаловать в API Hub</h1>
-      <p className="dashboard-subtitle">Выберите проект для запуска:</p>
+      <h1 className="dashboard-title">API Hub</h1>
+      <p className="dashboard-subtitle">
+        Коллекция интеграций REST API и сложных интерфейсов
+      </p>
     </div>
 
     <div className="projects-grid">
       {projects.map((project) => (
-        <Link
-          to={project.path}
+        <div
           key={project.id}
           className="project-card"
-          style={{ "--hover-color": project.color } as React.CSSProperties}
+          style={{ "--project-color": project.color } as React.CSSProperties}
         >
-          <div
-            className="project-icon-wrapper"
-            style={{
-              backgroundColor: `${project.color}20`,
-              color: project.color,
-            }}
-          >
-            {project.icon}
+          <div className="project-card-header">
+            <div
+              className="project-icon-wrapper"
+              style={{
+                backgroundColor: `${project.color}15`,
+                color: project.color,
+                boxShadow: `0 0 20px ${project.color}20`,
+              }}
+            >
+              {project.icon}
+            </div>
+            <a
+              href={project.docUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="doc-badge"
+              title="Открыть документацию API"
+            >
+              API Docs ↗
+            </a>
           </div>
+
           <div className="project-info">
             <h3 className="project-title">{project.title}</h3>
-            <p className="project-author">Код: {project.author}</p>
+            <div className="project-author-box">
+              <span className="author-label">Developer:</span>
+              <span className="author-name">{project.author}</span>
+            </div>
           </div>
-          <div className="project-arrow" style={{ color: project.color }}>
-            →
-          </div>
-        </Link>
+
+          <Link to={project.path} className="project-launch-btn">
+            Запустить
+            <span className="launch-arrow">→</span>
+          </Link>
+        </div>
       ))}
     </div>
   </div>
@@ -173,6 +227,10 @@ export const AppRouter = () => {
 
         <Route path="chainsawman">
           <Route index element={<CsmPage />} />
+        </Route>
+
+        <Route path="jujutsukaisen">
+          <Route index element={<JjkPage />} />
         </Route>
       </Route>
     </Routes>
