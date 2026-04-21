@@ -1,17 +1,14 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout } from "../../core/components/Layout";
 
-// Импорты Pokedex
 import { PokemonListScreen } from "../../features/pokedex/ui/screens/PokemonListScreen";
 import { PokemonDetailScreen } from "../../features/pokedex/ui/screens/PokemonDetailScreen";
 
-// Импорты Anime
 import { AnimePage } from "../../features/jikan/ui/AnimePage";
 import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailScreen/AnimeDetailScreen";
 
-// ИСПРАВЛЕННЫЙ ИМПОРТ: Путь к котам без пробелов
-// Важно: если папка называется cats (маленькими), то и здесь должно быть cats
-import { CatsPage } from "../../features/cats/ui/screens/CatsPage";
+import { GamesPage } from "../../features/rawg/ui/screen/GamesPage";
+import { GameDetailScreen } from "../../features/rawg/ui/screen/GameDetailScreen";
 
 const HomePage = () => (
   <div style={{ padding: "20px" }}>
@@ -31,7 +28,7 @@ const HomePage = () => (
         <Link to="/crypto">4. Crypto Dashboard (Разработчик 3)</Link>
       </li>
       <li>
-        <Link to="/cats">5. Cats Database (Эмир)</Link>
+        <Link to="/games">5. Video Games Database (RAWG)</Link>
       </li>
     </ul>
   </div>
@@ -43,19 +40,20 @@ export const AppRouter = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
 
-        {/* Секция Покемонов */}
         <Route path="pokemon" element={<PokemonListScreen />} />
         <Route path="pokemon/:name" element={<PokemonDetailScreen />} />
 
-        {/* Секция Аниме */}
         <Route path="anime">
           <Route index element={<AnimePage />} />
           <Route path=":id" element={<AnimeDetailScreen />} />
         </Route>
 
-        {/* ТВОЯ СЕКЦИЯ: Коты */}
         <Route path="cats" element={<CatsPage />} />
 
+        <Route path="games">
+          <Route index element={<GamesPage />} />
+          <Route path=":id" element={<GameDetailScreen />} />
+        </Route>
       </Route>
     </Routes>
   );
