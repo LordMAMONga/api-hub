@@ -23,19 +23,16 @@ const HomePage = () => (
     <p>Выберите проект:</p>
     <ul style={{ fontSize: "20px", lineHeight: "1.8" }}>
       <li>
-        <Link to="/pokemon">1. Pokedex (Разработчик 1)</Link>
+        <Link to="/pokemon">1. Pokedex </Link>
       </li>
       <li>
-        <Link to="/anime">2. Anime Database (Разработчик 2)</Link>
+        <Link to="/anime">2. Anime Database </Link>
       </li>
       <li>
-        <Link to="/onepiece">3. One Piece (Разработчик 3)</Link>
+        <Link to="/onepiece">3. One Piece </Link>
       </li>
+
       <li>
-        <Link to="/weather">4. Weather Tracker (Разработчик 4)</Link>
-      </li>
-      <li>
-        <Link to="/crypto">5. Crypto Dashboard (Разработчик 5)</Link>
         <Link to="/cats">3. Cats</Link>
       </li>
       <li>
@@ -50,7 +47,6 @@ const HomePage = () => (
     </ul>
   </div>
 );
-
 
 export const AppRouter = () => {
   return (
