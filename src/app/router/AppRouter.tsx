@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout } from "../../core/components/Layout";
+
 import { PokemonListScreen } from "../../features/pokedex/ui/screens/PokemonListScreen";
 import { PokemonDetailScreen } from "../../features/pokedex/ui/screens/PokemonDetailScreen";
 
@@ -11,9 +12,11 @@ import { GameDetailScreen } from "../../features/rawg/ui/screen/GameDetailScreen
 
 import { WallpapersPage } from "../../features/wallhaven/ui/screens/WallpapersPage";
 
+import { CatsPage } from "../../features/cats/ui/screens/CatsPage";
+
 const HomePage = () => (
   <div style={{ padding: "20px" }}>
-    <h1>API Hub </h1>
+    <h1>API Hub</h1>
     <p>Выберите проект:</p>
     <ul style={{ fontSize: "20px", lineHeight: "1.8" }}>
       <li>
@@ -23,13 +26,13 @@ const HomePage = () => (
         <Link to="/anime">2. Anime Database (Т)</Link>
       </li>
       <li>
-        <Link to="/weather">3. Weather Tracker (Разработчик 2)</Link>
+        <Link to="/cats">3. Cats </Link>
       </li>
       <li>
         <Link to="/crypto">4. Crypto Dashboard (Разработчик 3)</Link>
       </li>
       <li>
-        <Link to="/games">3. Video Games Database (RAWG)</Link>
+        <Link to="/games">5. Video Games Database (RAWG)</Link>
       </li>
       <li>
         <Link to="/wallpaper">3. Wallpapers</Link>
@@ -51,6 +54,8 @@ export const AppRouter = () => {
           <Route index element={<AnimePage />} />
           <Route path=":id" element={<AnimeDetailScreen />} />
         </Route>
+
+        <Route path="cats" element={<CatsPage />} />
 
         <Route path="games">
           <Route index element={<GamesPage />} />
