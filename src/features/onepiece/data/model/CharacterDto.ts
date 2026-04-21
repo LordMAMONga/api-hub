@@ -1,21 +1,19 @@
 export interface CharacterDto {
   id: number;
   name: string;
-  size: string;
-  bounty: string;
+  size: string | null;
+  age: string | null;
+  bounty: string | null;
+  status: string | null;
+  job: string | null;
   crew: {
     id: number;
     name: string;
     roman_name: string;
-  };
-  devil_fruit: {
+  } | null;
+  fruit: {
     id: number;
     name: string;
-    roman_name: string;
+    filename: string | null;
   } | null;
-  description: string;
-}
-
-export interface CharactersResponseDto {
-  characters: CharacterDto[];
 }

@@ -1,10 +1,11 @@
 export interface Character {
   id: number;
   name: string;
-  size: string;
+  status: string;
+  age: string | null;
+  size: string | null;
   bounty: string;
-  crewName: string;
-  devilFruit: string | null;
-  description: string;
-  imageUrl: string | null;
+  job: string | null;
+  crewName: string | null;
+  fruitName: string | null;
 }

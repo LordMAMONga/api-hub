@@ -1,5 +1,5 @@
-import type { Character } from '../../domain/model/Character';
-import styles from './CharacterCard.module.css';
+import type { Character } from "../../domain/model/Character";
+import styles from "./CharacterCard.module.css";
 
 interface Props {
   character: Character;
@@ -7,22 +7,25 @@ interface Props {
 
 export const CharacterCard = ({ character }: Props) => {
   return (
-    <div className={styles.card}>
-      <div className={styles.imageWrapper}>
-        {character.imageUrl ? (
-          <img src={character.imageUrl} alt={character.name} className={styles.image} />
-        ) : (
-          <div className={styles.imagePlaceholder}>🏴‍☠️</div>
-        )}
+    <article className={styles.card}>
+      <div className={styles.topRow}>
+        <div>
+          <h3 className={styles.name}>{character.name}</h3>
+        </div>
+
+        <span
+          className={`${styles.badge} ${
+            character.status === "Alive" ? styles.alive : styles.deceased
+          }`}
+        >
+          {character.status}
+        </span>
       </div>
-      <div className={styles.info}>
-        <h3 className={styles.name}>{character.name}</h3>
-        <p className={styles.detail}>🏴‍☠️ <span>{character.crewName}</span></p>
-        <p className={styles.detail}>💰 <span>{character.bounty || '—'}</span></p>
-        {character.devilFruit && (
-          <p className={styles.detail}>🍎 <span>{character.devilFruit}</span></p>
-        )}
+
+      <div className={styles.meta}>
+        <span>💰 {character.bounty}</span>
+        <span>🎂 {character.age ?? "—"}</span>
       </div>
-    </div>
+    </article>
   );
 };
