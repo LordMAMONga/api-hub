@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Spinner } from "./Spinner";
+import "./FactLoader.css"; 
 
 interface FactLoaderProps {
   facts: string[];
@@ -28,35 +29,20 @@ export const FactLoader = ({ facts }: FactLoaderProps) => {
         });
 
         setIsVisible(true);
-      }, 500);
+      }, 500); 
     }, 3000);
 
     return () => clearInterval(intervalId);
   }, [facts.length]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "40px",
-        textAlign: "center",
-      }}
-    >
-      <Spinner />
+    <div className="fact-loader-container">
+      {}
+      <div className="spinner-wrapper">
+        <Spinner />
+      </div>
 
-      <p
-        style={{
-          marginTop: "20px",
-          fontSize: "16px",
-          color: "#7f8c8d",
-          maxWidth: "400px",
-          minHeight: "48px",
-          transition: "opacity 0.5s ease-in-out",
-          opacity: isVisible ? 1 : 0,
-        }}
-      >
+      <p className={`fact-text ${isVisible ? "visible" : "hidden"}`}>
         {facts[currentIndex]}
       </p>
     </div>

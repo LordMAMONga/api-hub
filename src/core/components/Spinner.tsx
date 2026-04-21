@@ -1,21 +1,10 @@
-import { type FC } from "react";
+import type { FC } from "react";
+import "./Spinner.css"; 
 
 export const Spinner: FC = () => {
   return (
-    <div style={{ display: "flex", justifyContent: "center", padding: "20px" }}>
-      <div
-        style={{
-          width: "40px",
-          height: "40px",
-          border: "4px solid #f3f3f3",
-          borderTop: "4px solid #0d6efd",
-          borderRadius: "50%",
-          animation: "spin 1s linear infinite",
-        }}
-      />
-      <style>
-        {`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}
-      </style>
+    <div className="hub-spinner-container">
+      <div className="hub-spinner"></div>
     </div>
   );
 };
