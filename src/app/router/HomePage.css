@@ -1,0 +1,105 @@
+.hub-dashboard {
+    padding: 20px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.dashboard-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.dashboard-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #f8fafc;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.dashboard-subtitle {
+    color: #94a3b8;
+    font-size: 18px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+
+.project-card {
+    background: #1e293b;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--hover-color);
+    box-shadow: 0 10px 30px -10px var(--hover-color);
+    background: #233044;
+}
+
+/* Иконка проекта */
+.project-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-title {
+    margin: 0 0 6px 0;
+    color: #f1f5f9;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.project-author {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.project-arrow {
+    font-size: 24px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
