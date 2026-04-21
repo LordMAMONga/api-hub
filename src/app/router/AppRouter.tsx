@@ -14,6 +14,9 @@ import { WallpapersPage } from "../../features/wallhaven/ui/screens/WallpapersPa
 
 import { CatsPage } from "../../features/cats/ui/screens/CatsPage";
 
+import { DriverDetailScreen } from "../../features/football-standings/ui/screens/DriverDetailScreen";
+import { MaxDriverPage } from "../../features/football-standings/ui/screens/MaxDriverPage";
+
 const HomePage = () => (
   <div style={{ padding: "20px" }}>
     <h1>API Hub</h1>
@@ -29,7 +32,7 @@ const HomePage = () => (
         <Link to="/cats">3. Cats</Link>
       </li>
       <li>
-        <Link to="/crypto">4. Crypto Dashboard (Разработчик 3)</Link>
+        <Link to="/rick">4. Rick and Morty</Link>
       </li>
       <li>
         <Link to="/games">5. Video Games Database (RAWG)</Link>
@@ -64,6 +67,10 @@ export const AppRouter = () => {
 
         <Route path="wallpaper">
           <Route index element={<WallpapersPage />} />
+        </Route>
+        <Route path="rick">
+          <Route index element={<MaxDriverPage />} />
+          <Route path=":id" element={<DriverDetailScreen />} />
         </Route>
       </Route>
     </Routes>
