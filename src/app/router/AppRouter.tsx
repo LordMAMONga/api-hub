@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout } from "../../core/components/Layout";
+
 import { PokemonListScreen } from "../../features/pokedex/ui/screens/PokemonListScreen";
 import { PokemonDetailScreen } from "../../features/pokedex/ui/screens/PokemonDetailScreen";
 
@@ -11,7 +12,7 @@ import { GameDetailScreen } from "../../features/rawg/ui/screen/GameDetailScreen
 
 const HomePage = () => (
   <div style={{ padding: "20px" }}>
-    <h1>API Hub </h1>
+    <h1>API Hub</h1>
     <p>Выберите проект:</p>
     <ul style={{ fontSize: "20px", lineHeight: "1.8" }}>
       <li>
@@ -27,7 +28,7 @@ const HomePage = () => (
         <Link to="/crypto">4. Crypto Dashboard (Разработчик 3)</Link>
       </li>
       <li>
-        <Link to="/games">3. Video Games Database (RAWG)</Link>
+        <Link to="/games">5. Video Games Database (RAWG)</Link>
       </li>
     </ul>
   </div>
@@ -46,6 +47,9 @@ export const AppRouter = () => {
           <Route index element={<AnimePage />} />
           <Route path=":id" element={<AnimeDetailScreen />} />
         </Route>
+
+        <Route path="cats" element={<CatsPage />} />
+
         <Route path="games">
           <Route index element={<GamesPage />} />
           <Route path=":id" element={<GameDetailScreen />} />
