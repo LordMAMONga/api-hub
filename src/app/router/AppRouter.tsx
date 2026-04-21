@@ -1,11 +1,21 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout } from "../../core/components/Layout";
+
 import { PokemonListScreen } from "../../features/pokedex/ui/screens/PokemonListScreen";
 import { PokemonDetailScreen } from "../../features/pokedex/ui/screens/PokemonDetailScreen";
 import { OnePiecePage } from "../../features/onepiece/ui/screens/OnePiecePage";
 import { AnimePage } from "../../features/jikan/ui/AnimePage";
 import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailScreen/AnimeDetailScreen";
 
+import { GamesPage } from "../../features/rawg/ui/screen/GamesPage";
+import { GameDetailScreen } from "../../features/rawg/ui/screen/GameDetailScreen";
+
+import { WallpapersPage } from "../../features/wallhaven/ui/screens/WallpapersPage";
+
+import { CatsPage } from "../../features/cats/ui/screens/CatsPage";
+
+import { DriverDetailScreen } from "../../features/football-standings/ui/screens/DriverDetailScreen";
+import { MaxDriverPage } from "../../features/football-standings/ui/screens/MaxDriverPage";
 
 const HomePage = () => (
   <div style={{ padding: "20px" }}>
@@ -26,6 +36,16 @@ const HomePage = () => (
       </li>
       <li>
         <Link to="/crypto">5. Crypto Dashboard (Разработчик 5)</Link>
+        <Link to="/cats">3. Cats</Link>
+      </li>
+      <li>
+        <Link to="/rick">4. Rick and Morty</Link>
+      </li>
+      <li>
+        <Link to="/games">5. Video Games Database (RAWG)</Link>
+      </li>
+      <li>
+        <Link to="/wallpaper">3. Wallpapers</Link>
       </li>
     </ul>
   </div>
@@ -48,6 +68,20 @@ export const AppRouter = () => {
 
         <Route path="onepiece" element={<OnePiecePage />} />
 
+        <Route path="cats" element={<CatsPage />} />
+
+        <Route path="games">
+          <Route index element={<GamesPage />} />
+          <Route path=":id" element={<GameDetailScreen />} />
+        </Route>
+
+        <Route path="wallpaper">
+          <Route index element={<WallpapersPage />} />
+        </Route>
+        <Route path="rick">
+          <Route index element={<MaxDriverPage />} />
+          <Route path=":id" element={<DriverDetailScreen />} />
+        </Route>
       </Route>
     </Routes>
   );
