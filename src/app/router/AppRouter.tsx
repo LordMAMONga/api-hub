@@ -10,6 +10,8 @@ import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailSc
 import { GamesPage } from "../../features/rawg/ui/screen/GamesPage";
 import { GameDetailScreen } from "../../features/rawg/ui/screen/GameDetailScreen";
 
+import { CatsPage } from "../../features/cats/ui/screens/CatsPage";
+
 const HomePage = () => (
   <div style={{ padding: "20px" }}>
     <h1>API Hub</h1>
