@@ -24,7 +24,7 @@ const HomePage = () => (
         <Link to="/anime">2. Anime Database (Т)</Link>
       </li>
       <li>
-        <Link to="/weather">3. Weather Tracker (Разработчик 2)</Link>
+        <Link to="/cats">3. Cats</Link>
       </li>
       <li>
         <Link to="/crypto">4. Crypto Dashboard (Разработчик 3)</Link>
