@@ -70,11 +70,11 @@ const projects = [
   },
   {
     id: 7,
-    title: "Driver Standings",
+    title: "Rick and Morty",
     author: "Т",
     path: "/rick",
-    icon: "🏎️",
-    color: "#3b82f6",
+    icon: "🧪",
+    color: "#22c55e",
   },
 ];
 
