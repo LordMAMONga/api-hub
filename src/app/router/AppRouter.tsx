@@ -1,8 +1,9 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout } from "../../core/components/Layout";
+
 import { PokemonListScreen } from "../../features/pokedex/ui/screens/PokemonListScreen";
 import { PokemonDetailScreen } from "../../features/pokedex/ui/screens/PokemonDetailScreen";
-
+import { OnePiecePage } from "../../features/onepiece/ui/screens/OnePiecePage";
 import { AnimePage } from "../../features/jikan/ui/AnimePage";
 import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailScreen/AnimeDetailScreen";
 
@@ -66,9 +67,21 @@ export const AppRouter = () => {
           <Route path=":id" element={<AnimeDetailScreen />} />
         </Route>
         
+        <Route path="onepiece" element={<OnePiecePage />} />
+
+        <Route path="cats" element={<CatsPage />} />
+
         <Route path="games">
           <Route index element={<GamesPage />} />
           <Route path=":id" element={<GameDetailScreen />} />
+        </Route>
+
+        <Route path="wallpaper">
+          <Route index element={<WallpapersPage />} />
+        </Route>
+        <Route path="rick">
+          <Route index element={<MaxDriverPage />} />
+          <Route path=":id" element={<DriverDetailScreen />} />
         </Route>
       </Route>
     </Routes>
