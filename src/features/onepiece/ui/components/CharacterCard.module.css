@@ -1,0 +1,75 @@
+.card {
+  background: linear-gradient(180deg, #171b34 0%, #111427 100%);
+  border: 1px solid rgba(255, 82, 117, 0.45);
+  border-radius: 16px;
+  padding: 18px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #ff526f;
+  box-shadow: 0 14px 30px rgba(255, 82, 117, 0.15);
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #f8f8ff;
+}
+
+.nameJp {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #8fd3ff;
+  opacity: 0.9;
+}
+
+.badge {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.alive {
+  background: rgba(84, 214, 114, 0.12);
+  color: #62e28a;
+  border: 1px solid rgba(98, 226, 138, 0.35);
+}
+
+.deceased {
+  background: rgba(255, 82, 111, 0.12);
+  color: #ff718b;
+  border: 1px solid rgba(255, 113, 139, 0.35);
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  color: #d9e7ff;
+  font-size: 14px;
+}
+
+.meta span {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 10px 12px;
+}

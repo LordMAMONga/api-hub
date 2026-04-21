@@ -3,7 +3,7 @@ import { Layout } from "../../core/components/Layout";
 
 import { PokemonListScreen } from "../../features/pokedex/ui/screens/PokemonListScreen";
 import { PokemonDetailScreen } from "../../features/pokedex/ui/screens/PokemonDetailScreen";
-
+import { OnePiecePage } from "../../features/onepiece/ui/screens/OnePiecePage";
 import { AnimePage } from "../../features/jikan/ui/AnimePage";
 import { AnimeDetailScreen } from "../../features/jikan/ui/screens/AnimeDetailScreen/AnimeDetailScreen";
 
@@ -26,9 +26,16 @@ const HomePage = () => (
         <Link to="/pokemon">1. Pokedex (Разработчик 1)</Link>
       </li>
       <li>
-        <Link to="/anime">2. Anime Database (Т)</Link>
+        <Link to="/anime">2. Anime Database (Разработчик 2)</Link>
       </li>
       <li>
+        <Link to="/onepiece">3. One Piece (Разработчик 3)</Link>
+      </li>
+      <li>
+        <Link to="/weather">4. Weather Tracker (Разработчик 4)</Link>
+      </li>
+      <li>
+        <Link to="/crypto">5. Crypto Dashboard (Разработчик 5)</Link>
         <Link to="/cats">3. Cats</Link>
       </li>
       <li>
@@ -44,6 +51,7 @@ const HomePage = () => (
   </div>
 );
 
+
 export const AppRouter = () => {
   return (
     <Routes>
@@ -57,6 +65,8 @@ export const AppRouter = () => {
           <Route index element={<AnimePage />} />
           <Route path=":id" element={<AnimeDetailScreen />} />
         </Route>
+
+        <Route path="onepiece" element={<OnePiecePage />} />
 
         <Route path="cats" element={<CatsPage />} />
 
