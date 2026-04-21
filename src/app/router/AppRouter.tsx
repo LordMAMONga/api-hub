@@ -17,6 +17,8 @@ import { WallpapersPage } from "../../features/wallhaven/ui/screens/WallpapersPa
 import { MaxDriverPage } from "../../features/football-standings/ui/screens/MaxDriverPage";
 import { DriverDetailScreen } from "../../features/football-standings/ui/screens/DriverDetailScreen";
 
+import { QuotesPage } from "../../features/quotes/ui/screens/QuotesPage";
+
 import "./HomePage.css";
 
 const projects = [
@@ -73,6 +75,14 @@ const projects = [
     title: "Rick and Morty",
     author: "Т",
     path: "/rick",
+    icon: "🧪",
+    color: "#22c55e",
+  },
+  {
+    id: 8,
+    title: "Anime Quote",
+    author: "Т",
+    path: "/quote",
     icon: "🧪",
     color: "#22c55e",
   },
@@ -145,6 +155,10 @@ export const AppRouter = () => {
         <Route path="rick">
           <Route index element={<MaxDriverPage />} />
           <Route path=":id" element={<DriverDetailScreen />} />
+        </Route>
+
+        <Route path="quote">
+          <Route index element={<QuotesPage />} />
         </Route>
       </Route>
     </Routes>
