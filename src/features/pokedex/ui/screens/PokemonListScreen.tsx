@@ -117,6 +117,7 @@ export const PokemonListScreen = () => {
                 padding: "20px",
                 display: "flex",
                 flexDirection: "row",
+                zIndex: 10,
                 justifyContent: "space-between",
                 color: "white",
                 boxShadow: `0 10px 20px ${bgColor}50`,
